@@ -14,7 +14,7 @@ function loadMap() {
 	g = svg.append("g").attr("class", "g-town")
 	
 	town = g.selectAll("path.town")
-	  .data(geojson.features)
+	  .data(townMap.features)
 	  .enter()
 	  .append("path")
 	  .attr("class", "town")
