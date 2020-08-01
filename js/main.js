@@ -19,6 +19,5 @@ async function loadMap() {
 	  .append("path")
 	  .attr("class", "town")
 	  .attr('d', path)
-	  .style('stroke', "white");
-	
+	  .style('stroke', "black");	
 }
