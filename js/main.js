@@ -13,7 +13,7 @@ async function loadMap() {
 	  
 	var g = svg.append("g").attr("class", "g-town")
 	
-	var town = g.selectAll("path.town")
+	var town = g.selectAll("path")
 	  .data(townMap.features)
 	  .enter()
 	  .append("path")
