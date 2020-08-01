@@ -1,1 +1,45 @@
-"Hello World" 
+<!doctype html>
+<meta charset="utf-8">
+<html>
+<head>
+
+    <link rel="stylesheet" href="css/main.css">
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <script src="https://d3js.org/topojson.v1.js"></script>
+    <script src="js/main.js"></script>
+
+    <title>Connecticut Covid-19 Timeline</title>
+
+    <style type="text/css">
+      #map {
+        width: 615px;
+        height: 375px;
+      }
+      .town {
+          fill: #ccc;
+      }
+
+    </style>
+
+
+</head>
+
+<body onload="loadMap()">
+
+<div id="main">
+    <div id="turning-points">
+        <div class="frame"></div>
+        <div class="frame"></div>
+        <div class="frame"></div>
+        <div class="frame"></div>
+    </div>
+    <div id="map">
+
+    </div>
+    <div id="svg">
+
+    </div>
+</div>
+
+</body>
+</html>
