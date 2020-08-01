@@ -1,6 +1,6 @@
 async function loadMap() {
 	
-	var width = 900;
+	var width = 1000;
 	var height = 700;
 	var townMap = await d3.json("data/ct-towns.geojson");
 	var projection = d3.geoMercator().translate([width/2, height/2]).scale(25000).center([-72.6, 41.5]);
