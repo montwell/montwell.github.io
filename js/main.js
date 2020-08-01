@@ -3,8 +3,8 @@ async function loadMap() {
 	var width = 1400;
 	var height = 700;
 	var townMap = await d3.json("data/ct-towns.geojson");
-	var projection = d3.geoMercator().translate([width/2, height/2]).scale(2200).center([0,40]);
-    var path = d3.geoPath().projection(null);
+	var projection = d3.geoMercator().translate([width/2, height/2]).scale(10).center([42,-72]);
+    var path = d3.geoPath().projection(projection);
 	
 	var svg = d3.select("#map")
 	  .append("svg")
