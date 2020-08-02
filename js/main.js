@@ -64,7 +64,9 @@ function onClickTown(path, townId) {
 		clickedTown = 0;
 	}
 	
-	console.log(covidDataByTown[townId - 1])
+	var townData = covidDataByTown[townId - 1]
+	var latestData = towndata[townData.length - 1]
+	console.log(latestData)
 }
 
 function getEaseLinearTransition() {
