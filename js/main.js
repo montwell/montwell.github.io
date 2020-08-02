@@ -69,11 +69,11 @@ function drawCasesGraph(townId){
 		var townData = covidDataByTown[townId - 1].values
 		console.log(townData)
 		var maxCases = d3.max(townData.values, d => d.values[0]["Total cases "])
-		console.log("Max Cases: " + maxCases);		
-			
+		console.log("Max Cases: " + maxCases);					
 		
 		var casesGraphDiv = d3.select("#casesGraph");
 		
+		casesGraphDiv.style("visibility", "visible");
 		casesGraphDiv.selectAll("svg").remove();
 		
 		var svg = casesGraphDiv
@@ -126,15 +126,14 @@ function drawDeathsGraph(townId){
 		var townData = covidDataByTown[townId - 1].values
 		console.log(townData)
 		var maxCases = d3.max(townData.values, d => d.values[0]["Total deaths"])
-		console.log("Max Cases: " + maxCases);		
-			
+		console.log("Max Cases: " + maxCases);					
 		
-		var casesGraphDiv = d3.select("#deathsGraph");
+		var deathsGraphDiv = d3.select("#deathsGraph");
 		
-		casesGraphDiv.style("visibility", "visible");		
-		casesGraphDiv.selectAll("svg").remove();
+		deathsGraphDiv.style("visibility", "visible");		
+		deathsGraphDiv.selectAll("svg").remove();
 		
-		var svg = casesGraphDiv
+		var svg = deathsGraphDiv
 			.append("svg")
 			.attr('width', svgWidth)
 			.attr('height', svgHeight);
