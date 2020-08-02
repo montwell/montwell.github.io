@@ -3,14 +3,14 @@ var covidDataByTown;
 var clickedTown;
 
 async function init() {
-	console.log("version 0.03");
+	console.log("version 0.03.200731");
 	
 	geojson = await d3.json("data/ct-towns.geojson");
 	var csvCovidData = await d3.csv("data/covid-by-town.csv");
 	
 	covidDataByTown = d3.nest()
 		.key(function(d) {return d["Town number"];})
-		.key(function(d) {return d["Last update_date"];})
+		.key(function(d) {return d["Last update date"];})
 		.entries(csvCovidData);	
 	
 	console.log(covidDataByTown);
