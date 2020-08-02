@@ -1,6 +1,6 @@
 body {
 	font-size: 100%;
-	color: #000;
+	color: #EEE;
 }
 
 div {
@@ -45,9 +45,18 @@ div {
 }
 
 .graph {
+	position: relative;
 	display: inline-block;
 	width:425px;
 	height:300px;
+}
+
+.graph-label {
+	position: absolute;
+	top:0;
+	width: 100%;
+	text-align: center;
+	font-size: 1.8em;
 }
 
 .g-graph {
