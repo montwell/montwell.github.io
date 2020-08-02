@@ -204,6 +204,7 @@ function onClickTown(path, townId) {
 		previouslySelectedTown = path;
 		path.style('fill', '#00f');
 	} else {
+		console.log("Town unclicked");
 		previouslySelectedTownId = null;
 		previouslySelectedTown = null;
 		
