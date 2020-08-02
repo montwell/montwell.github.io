@@ -55,6 +55,13 @@ function onMouseOutTown(path, townId) {
     if(clickedTown != townId) {
 		path.transition(getEaseLinearTransition()).style('fill', "#ccc");
 	}
+	
+	if(clickedTown == 0) {
+		document.getElementById("townInfo").innerHTML = ""
+	} else {
+		document.getElementById("townInfo").innerHTML = 
+		'<span id="townInfoName">' + getTownName(townId) + '</span>';
+	}
 }  
 
 function onClickTown(path, townId) {
