@@ -208,7 +208,7 @@ function onClickTown(path, townId) {
 	}
 	
 	drawCasesGraph(townId);
-	drawDeaths(townId);
+	drawDeathsGraph(townId);
 }
 
 function getEaseLinearTransition() {
