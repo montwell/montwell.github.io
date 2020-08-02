@@ -39,7 +39,7 @@ function drawMap() {
 	  .append("path")
 	  .attr("class", "town")
 	  .attr('d', path)
-	  .style('fill', d => mapColorScale(d)
+	  .style('fill', d => mapColorScale(d))
 	  .style('stroke', "white")	  
 	  .on("mouseover", function(d) {onMouseOverTown(d3.select(this), d.properties.town_no);})
 	  .on("mouseout", function(d) {onMouseOutTown(d3.select(this), d.properties.town_no);})
