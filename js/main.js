@@ -1,6 +1,6 @@
 var geojson;
 var covidDataByTown;
-var clickedTown;
+var clickedTown = 0;
 
 async function init() {
 	console.log("version 0.03.200731");
