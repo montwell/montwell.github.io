@@ -101,7 +101,9 @@ function drawCasesGraph(townId){
 			.attr("transform", "translate(" + margin.left + "," + margin.top + ")")
 			.call(d3.axisLeft(y));
 			
-		svg.append("path")
+		svg.append("g")
+			.attr("transform", "translate(" + margin.left + "," margin.top + ")")			
+			.append("path")
 			.datum(townData)
 			.attr("stroke", "#00f")
 			.attr("stroke-width", 1.5)
