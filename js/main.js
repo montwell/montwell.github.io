@@ -29,8 +29,8 @@ function drawMap() {
 	  .attr("class", "town")
 	  .attr('d', path)
 	  .style('stroke', "white")	  
-	  .on("mouseover", onMouseOverTown(d.properties.town_no))
-	  .on("mouseout", onMouseOutTown(d.properties.town_no));
+	  .on("mouseover", function(d) {onMouseOverTown(d.properties.town_no);})
+	  .on("mouseout", function(d) {onMouseOutTown(d.properties.town_no);});
 }
 
 function onMouseOverTown(townId) {
