@@ -114,24 +114,35 @@ function drawCasesGraph(townId){
 			.attr("stroke-width", 1.5)
 			.attr("d", d3.line()
 				.x(d => x(new Date(d.key)))
-				.y(d => y(parseInt(d.values[0]["Total cases "])))
-				.on('mouseover', d => {
-					console.log(d);
-					tooltip
-						.transition()
-						.duration(200)
-						.style('opacity', 0.9);
-					tooltip
-						.html(d.key + '<br/>' + d.values[0]["Total cases "])
-						.style('left', d3.event.pageX + 'px')
-						.style('top', d3.event.pageY - 28 + 'px');
-				})
-				.on('mouseout', () => {
-					tooltip
-						.transition()
-						.duration(400)
-						.style('opacity', 0);
-				}));
+				.y(d => y(parseInt(d.values[0]["Total cases "]))));
+				
+		svg.append("g")
+			.selectAll('dot')
+			.data(townData)
+			.append('circle')
+			.attr('r', 5)
+			.attr('cx', d => x(new Date(d.key)))
+			.attr('cy', d => y(parseInt(d.values[0]["Total cases "]))
+			.attr('stroke-width', '20px')
+			.attr('stroke', 'rgba(0,0,0,0)')
+			.style('cursor', 'pointer')
+			.on('mouseover', d => {
+			  tooltip
+				.transition()
+				.duration(200)
+				.style('opacity', 0.9);
+			  tooltip
+				.html(d.key + '<br/>' + d.values[0]["Total cases "])
+				.style('left', d3.event.pageX + 'px')
+				.style('top', d3.event.pageY - 28 + 'px');
+			})
+			.on('mouseout', () => {
+			  tooltip
+				.transition()
+				.duration(500)
+				.style('opacity', 0);
+			});
+			
 	}
 }
 
