@@ -3,8 +3,17 @@ div {
 }
 
 #map {
-        width: 1000px;
-        height: 700px;
+	position: relative;
+    width: 1000px;
+    height: 700px;
+}
+
+#townInfo {
+	position: absolute;
+	right:0;
+	bottom:0;
+	width: 600px;
+	height: 100px;
 }
 
 .frame {
