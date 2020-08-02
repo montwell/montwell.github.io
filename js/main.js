@@ -77,7 +77,8 @@ function drawCasesGraph(townId){
 			.range([0, width]);
 		
 		svg.append("g").attr("transform", "translate(0," + height + ")")
-			.call(d3.axisBottom(x));
+			.call(d3.axisBottom(x))
+			.style('stroke', '#000');
 	}
 }
 
