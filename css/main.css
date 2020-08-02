@@ -50,6 +50,10 @@ div {
 	height:300px;
 }
 
+.g-graph {
+	stroke: #000;
+}
+
 .center-horizontally {
 	margin: 0 auto 0 auto;
 }

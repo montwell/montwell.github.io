@@ -42,6 +42,7 @@ function drawMap() {
 	  .attr('height', height);
 	  
 	var g = svg.append("g").attr("class", "g-town");
+		
 	
 	var town = g.selectAll("path")
 	  .data(geojson.features)
@@ -77,8 +78,7 @@ function drawCasesGraph(townId){
 			.range([0, width]);
 		
 		svg.append("g").attr("transform", "translate(0," + height + ")")
-			.call(d3.axisBottom(x))
-			.style('stroke', '#000');
+			.call(d3.axisBottom(x));
 	}
 }
 
