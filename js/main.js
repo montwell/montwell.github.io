@@ -200,9 +200,9 @@ function onClickTown(path, townId) {
 		previouslySelectedTown = path;
 		path.style('fill', '#00f');
 		
+		d3.select("#graphs").style("visibility", "visible");
 		drawCasesGraph(townId);
 		drawDeathsGraph(townId);
-		d3.select("#graphs").style("visibility", "visible");
 		
 	} else {
 		console.log("Town unclicked");
