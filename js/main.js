@@ -56,9 +56,10 @@ function drawMap() {
 	  .on("click", function(d) {onClickTown(d3.select(this), d.properties.town_no);});
 }
 
-function drawCasesGraph(townId){
-	var width = 425;
-	var height = 300;
+function drawCasesGraph(townId){	
+	var margin = {top: 10, right: 30, bottom: 30, left: 60},
+		width = 425 - margin.left - margin.right,
+		height = 300 - margin.top - margin.bottom;
 	
 	if(townId != null) {
 		var townData = covidDataByTown[townId - 1]
