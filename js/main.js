@@ -101,7 +101,7 @@ function clearTownInfo() {
 	document.getElementById("townInfo").innerHTML = ""
 }
 
-function getLatestData() {
+function getLatestData(townId) {
 	var townData = covidDataByTown[townId - 1]
 	console.log(townData)
 	var latestData = townData.values[townData.values.length - 1]
