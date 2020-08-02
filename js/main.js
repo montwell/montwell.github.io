@@ -46,6 +46,9 @@ function drawMap() {
 
 function onMouseOverTown(path, townId) {
 	path.transition(getEaseLinearTransition()).style('fill', "#00f");
+	
+	document.getElementById("townInfo").innerHTML = 
+		"<span id="townInfoName">" + getTownName(townId) + "</span>"
 }
 
 function onMouseOutTown(path, townId) {	  
@@ -62,12 +65,7 @@ function onClickTown(path, townId) {
 		path.style('fill', '#00f');
 	} else {
 		clickedTown = 0;
-	}
-	
-	var townData = covidDataByTown[townId - 1]
-	console.log(townData)
-	var latestData = townData.values[townData.values.length - 1]
-	console.log(latestData)
+	}	
 }
 
 function getEaseLinearTransition() {
@@ -82,4 +80,12 @@ function greyMap() {
 	  .select("g")
 	  .selectAll("path")
 	  .style('fill', '#ccc');
+}
+
+function getTownName(townId) {
+	var townData = covidDataByTown[townId - 1]
+	console.log(townData)
+	var latestData = townData.values[townData.values.length - 1]
+	console.log(latestData)
+	return latestData.values[0].Town
 }
