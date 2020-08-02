@@ -1,21 +1,19 @@
 var geojson;
 var covidDataByTown;
-var maxCases;
-
 var clickedTown = "";
-
-var mapColorScale = d3.scaleLinear().domain([0,1]).range(["green","red"])
+var mapColorScale;
 
 async function init() {
 	console.log("version 0.03.200731");
 	
 	geojson = await d3.json("data/ct-towns.geojson");
-	var csvCovidData = await d3.csv("data/covid-by-town.csv");
-	
+	var csvCovidData = await d3.csv("data/covid-by-town.csv");	
 	console.log(csvCovidData);
 	
-	maxCases = d3.max(csvCovidData, d => parseInt(d["Total cases "]));
+	var maxCases = d3.max(csvCovidData, d => parseInt(d["Total cases "]));
 	console.log("Max Total Cases: " + maxCases);
+	
+	mapColorScale = d3.scaleLinear().domain([0,maxCases]).range(["green","red"])
 	
 	covidDataByTown = d3.nest()
 		.key(d => d["Town number"])
