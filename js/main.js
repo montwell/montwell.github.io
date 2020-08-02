@@ -56,7 +56,7 @@ function drawMap() {
 }
 
 function onMouseOverTown(path, townId) {
-	console.log(d3.select(path).style('fill'))
+	console.log(d3.select(path))
 	path.transition(getEaseLinearTransition()).style('fill', "#00f");
 	
 	setTownInfo(townId);
