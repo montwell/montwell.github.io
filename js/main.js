@@ -90,7 +90,7 @@ function drawCasesGraph(townId){
 			.range([0, gWidth]);
 			
 		var y = d3.scaleLinear()
-			.domain([0, d3.max(townData.values, d => d.values[0]["Total cases "])])
+			.domain([0, d3.max(townData.values, d => parseInt(d.values[0]["Total cases "]))])
 			.range([gHeight, 0]);			
 		
 		svg.append("g")
