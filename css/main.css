@@ -10,7 +10,6 @@ div {
 
 #main {
 	width:900px;
-	margin: 0 auto 0 auto;
 }
 
 #map {
@@ -25,6 +24,10 @@ div {
 	bottom:0;
 	width: 570px;
 	height: 180px;
+}
+
+.center-horizontally {
+	margin: 0 auto 0 auto;
 }
 
 .frame {
