@@ -17,6 +17,8 @@ div {
 }
 
 .frame {
+	width: 900/4
+	height: 50px
     block: inline;
 }
 
