@@ -117,14 +117,14 @@ function drawCasesGraph(townId){
 				.y(d => y(parseInt(d.values[0]["Total cases "]))));
 				
 		svg.append("g")
-			.selectAll('dot')
+			.selectAll('circle')
 			.data(townData)
 			.append('circle')
 			.attr('r', 5)
 			.attr('cx', d => x(new Date(d.key)))
 			.attr('cy', d => y(parseInt(d.values[0]["Total cases "])))
 			.attr('stroke-width', '20px')
-			.attr('stroke', 'rgba(255,0,0,0)')
+			.attr('stroke', 'rgba(0,0,0,.8)')
 			.style('cursor', 'pointer')
 			.on('mouseover', d => {
 			  tooltip
