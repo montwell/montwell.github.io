@@ -48,7 +48,7 @@ function onMouseOverTown(path, townId) {
 	path.transition(getEaseLinearTransition()).style('fill', "#00f");
 	
 	document.getElementById("townInfo").innerHTML = 
-		"<span id="townInfoName">" + getTownName(townId) + "</span>"
+		'<span id="townInfoName">' + getTownName(townId) + '</span>';
 }
 
 function onMouseOutTown(path, townId) {	  
@@ -87,5 +87,5 @@ function getTownName(townId) {
 	console.log(townData)
 	var latestData = townData.values[townData.values.length - 1]
 	console.log(latestData)
-	return latestData.values[0].Town
+	return latestData.values[0].Town;
 }
