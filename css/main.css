@@ -10,6 +10,10 @@ div {
 	width:900px;
 }
 
+#header {
+	margin: 0 auto 0 auto;
+}
+
 #map {
 	position: relative;
     width: 900px;
@@ -54,7 +58,6 @@ div {
 }
 
 .headerText {
-	width: 100%;
 	text-align: center;
 	font-size: 1.6em;
 }
