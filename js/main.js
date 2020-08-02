@@ -65,7 +65,7 @@ function onClickTown(path, townId) {
 	}
 	
 	var townData = covidDataByTown[townId - 1]
-	var latestData = towndata[townData.length - 1]
+	var latestData = townData[townData.length - 1]
 	console.log(latestData)
 }
 
