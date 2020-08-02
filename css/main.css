@@ -20,7 +20,7 @@ div {
 #map {
 	position: relative;
     width: 900px;
-    height: 650px;
+    height: 625px;
 }
 
 #townInfo {
@@ -28,7 +28,7 @@ div {
 	right:0;
 	bottom:0;
 	width: 400px;
-	height: 180px;
+	height: 100px;
 }
 
 #townInfoName {
