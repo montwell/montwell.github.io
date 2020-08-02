@@ -72,8 +72,6 @@ function drawCasesGraph(townId){
 		console.log("Max Cases: " + maxCases);					
 		
 		var casesGraphDiv = d3.select("#casesGraph");
-		
-		casesGraphDiv.style("visibility", "visible");
 		casesGraphDiv.selectAll("svg").remove();
 		
 		var svg = casesGraphDiv
@@ -128,9 +126,7 @@ function drawDeathsGraph(townId){
 		var maxCases = d3.max(townData.values, d => d.values[0]["Total deaths"])
 		console.log("Max Cases: " + maxCases);					
 		
-		var deathsGraphDiv = d3.select("#deathsGraph");
-		
-		deathsGraphDiv.style("visibility", "visible");		
+		var deathsGraphDiv = d3.select("#deathsGraph");		
 		deathsGraphDiv.selectAll("svg").remove();
 		
 		var svg = deathsGraphDiv
@@ -206,17 +202,13 @@ function onClickTown(path, townId) {
 		
 		drawCasesGraph(townId);
 		drawDeathsGraph(townId);
+		d3.select("#graphs").style("visibility", "visible");
 		
 	} else {
 		console.log("Town unclicked");
 		previouslySelectedTownId = null;
 		previouslySelectedTown = null;
-		
-		var casesGraphDiv = d3.select("#casesGraph")
-			.style("visibility", "hidden");
-		
-		var deathsGraphDiv = d3.select("#deathsGraph")
-			.style("visibility", "hidden");
+		d3.select("#graphs").style("visibility", "hidden");
 	}
 }
 

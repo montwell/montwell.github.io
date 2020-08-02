@@ -86,5 +86,5 @@ div {
 }
 
 .dropshadow {
-	filter: drop-shadow(0 0 0.25rem dimgray);	
+	filter: drop-shadow(0 0 0.2rem dimgray);	
 }
