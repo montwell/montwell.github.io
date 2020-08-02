@@ -16,7 +16,7 @@ async function init() {
 	mapColorScale = d3.scaleLinear()
 		.domain([0,maxCases])
 		//.range(["#FFDDDD","FF0000"]);
-		.range(["whitesmoke","red"]);
+		.range(["gainsboro","red"]);
 	
 	covidDataByTown = d3.nest()
 		.key(d => d["Town number"])
