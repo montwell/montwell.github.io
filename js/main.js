@@ -218,9 +218,6 @@ function onClickTown(path, townId) {
 		var deathsGraphDiv = d3.select("#deathsGraph")
 			.style("visibility", "hidden");
 	}
-	
-	drawCasesGraph(townId);
-	drawDeathsGraph(townId);
 }
 
 function getEaseLinearTransition() {
