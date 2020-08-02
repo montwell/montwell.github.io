@@ -203,18 +203,20 @@ function onClickTown(path, townId) {
 		previouslySelectedTownId = townId;
 		previouslySelectedTown = path;
 		path.style('fill', '#00f');
+		
+		drawCasesGraph(townId);
+		drawDeathsGraph(townId);
+		
 	} else {
 		console.log("Town unclicked");
 		previouslySelectedTownId = null;
 		previouslySelectedTown = null;
 		
 		var casesGraphDiv = d3.select("#casesGraph")
-		casesGraphDiv.style("visibility", "hidden");
-		casesGraphDiv.selectAll("svg").remove();
+			.style("visibility", "hidden");
 		
 		var deathsGraphDiv = d3.select("#deathsGraph")
-		deathsGraphDiv.style("visibility", "hidden");
-		deathsGraphDiv.selectAll("svg").remove();		
+			.style("visibility", "hidden");
 	}
 	
 	drawCasesGraph(townId);
