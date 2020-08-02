@@ -91,3 +91,20 @@ div {
 .dropshadow {
 	filter: drop-shadow(0 0 0.2rem dimgray);	
 }
+
+.tooltip circle {
+        fill: steelblue;
+    }
+
+.tooltip text {
+        font-size: 14px;
+}
+
+.tooltip {
+        fill: white;
+        stroke: #000;
+    }
+
+.tooltip-data, .tooltip-likes {
+	font-weight: bold;
+}

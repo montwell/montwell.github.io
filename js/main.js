@@ -66,6 +66,9 @@ function drawCasesGraph(townId){
 		gHeight = 300 - margin.top - margin.bottom;
 	
 	if(townId != null) {
+		var parseDate = d3.time.format("%m/%e/%Y").parse,
+			dateFormatter = d3.time.format("%m/%d/%y");
+		
 		var townData = covidDataByTown[townId - 1].values
 		console.log(townData)
 		var maxCases = d3.max(townData.values, d => d.values[0]["Total cases "])
@@ -90,6 +93,12 @@ function drawCasesGraph(townId){
 		var y = d3.scaleLinear()
 			.domain([0, d3.max(townData, d => parseInt(d.values[0]["Total cases "]))])
 			.range([gHeight, 0]);			
+			
+		const tooltip = d3
+			.select('body')
+			.append('div')
+			.attr('class', 'tooltip')
+			.style('opacity', 0);
 		
 		svg.append("g")
 			.attr("transform", "translate(" + margin.left + "," + (gHeight + margin.top) + ")")
@@ -108,7 +117,23 @@ function drawCasesGraph(townId){
 			.attr("stroke-width", 1.5)
 			.attr("d", d3.line()
 				.x(d => x(new Date(d.key)))
-				.y(d => y(parseInt(d.values[0]["Total cases "]))));
+				.y(d => y(parseInt(d.values[0]["Total cases "]))))
+			.on('mouseover', d => {
+				tooltip
+					.transition()
+					.duration(200)
+					.style('opacity', 0.9);
+				tooltip
+					.html(d.key + '<br/>' + d.values[0]["Total cases "])
+					.style('left', d3.event.pageX + 'px')
+					.style('top', d3.event.pageY - 28 + 'px');
+			})
+			.on('mouseout', () => {
+				tooltip
+					.transition()
+					.duration(400)
+					.style('opacity', 0);
+			});
 	}
 }
 
