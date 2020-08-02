@@ -27,6 +27,7 @@ async function init() {
 	
 	//console.log(covidDataByTown);
 	drawMap();
+	//drawCasesGraph(null);
 }
 
 function drawMap() {
@@ -40,7 +41,7 @@ function drawMap() {
 	  .attr('width', width)
 	  .attr('height', height);
 	  
-	var g = svg.append("g").attr("class", "g-town")
+	var g = svg.append("g").attr("class", "g-town");
 	
 	var town = g.selectAll("path")
 	  .data(geojson.features)
@@ -53,6 +54,26 @@ function drawMap() {
 	  .on("mouseover", function(d) {onMouseOverTown(d3.select(this), d.properties.town_no);})
 	  .on("mouseout", function(d) {onMouseOutTown(d3.select(this), d.properties.town_no);})
 	  .on("click", function(d) {onClickTown(d3.select(this), d.properties.town_no);});
+}
+
+function drawCasesGraph(townId){
+	var width = 425;
+	var height = 300;
+	
+	if(townId != null) {
+		var townData = covidDataByTown[townId - 1]
+		console.log(townData)
+		
+		var svg = d3.select("#casesGraph")
+			.append("svg")
+			.attr('width', width)
+			.attr('height', height);
+			
+		var g = svg.append("g").attr("class", "g-graph");
+		
+		//var x = d3.scaleTime()
+		//	.domain(d3.extent(
+	}
 }
 
 function onMouseOverTown(path, townId) {
@@ -91,6 +112,7 @@ function onClickTown(path, townId) {
 		previouslySelectedTown = null;
 	}
 	
+	drawCasesGraph(townId);
 }
 
 function getEaseLinearTransition() {
