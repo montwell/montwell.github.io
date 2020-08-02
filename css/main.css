@@ -22,9 +22,9 @@ div {
 }
 
 .frame {
-	width: 900/4
-	height: 50px
-    display: block-inline;
+	width: 900/4;
+	height: 50px;
+    display: inline-block;
 }
 
 .town {
