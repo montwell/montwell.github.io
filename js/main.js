@@ -35,12 +35,12 @@ function drawMap() {
 	  .style('stroke', "white")	  
 	  .on("mouseover", function(d) {onMouseOverTown(d3.select(this), d.properties.town_no);})
 	  .on("mouseout", function(d) {onMouseOutTown(d3.select(this), d.properties.town_no);})
-	  .on("click", function(d) {onClickTown(d.properties.town_no);});
+	  .on("click", function(d) {onClickTown(d3.select(this), d.properties.town_no);});
 }
 
 function onMouseOverTown(path, townId) {
 	console.log("over town: " + townId);
-	path.transition(transitionEaseLinear).style('fill', "#ff0000");
+	path.transition(transitionEaseLinear).style('fill', "#f00");
 }
 
 function onMouseOutTown(path, townId) {	  
@@ -48,6 +48,6 @@ function onMouseOutTown(path, townId) {
 }  
 
 function onClickTown(path, townId) {
-	console.log(townId + "Clicked!")
+	console.log(townId + " Clicked!")
 	path.style('stroke', '#f00')
 }
