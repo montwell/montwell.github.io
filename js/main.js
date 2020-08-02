@@ -13,7 +13,7 @@ async function init() {
 function drawMap() {
 	var width = 1000;
 	var height = 700;	
-	var projection = d3.geoMercator().translate([width/2, height/2]).scale(25000).center([-72.667, 41.5]);
+	var projection = d3.geoMercator().translate([width/2, height/2]).scale(25000).center([-72.68, 41.5]);
     var path = d3.geoPath().projection(projection);
 	
 	var svg = d3.select("#map")
