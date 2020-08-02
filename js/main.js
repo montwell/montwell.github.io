@@ -91,7 +91,7 @@ function drawCasesGraph(townId){
 			.domain([0, d3.max(townData, d => parseInt(d.values[0]["Total cases "]))])
 			.range([gHeight, 0]);			
 			
-		const tooltip = d3
+		var tooltip = d3
 			.select('body')
 			.append('div')
 			.attr('class', 'tooltip')
@@ -124,7 +124,7 @@ function drawCasesGraph(townId){
 			.attr('cx', d => x(new Date(d.key)))
 			.attr('cy', d => y(parseInt(d.values[0]["Total cases "])))
 			.attr('stroke-width', '20px')
-			.attr('stroke', 'rgba(0,0,0,0)')
+			.attr('stroke', 'rgba(255,0,0,0)')
 			.style('cursor', 'pointer')
 			.on('mouseover', d => {
 			  tooltip

@@ -91,3 +91,16 @@ div {
 .dropshadow {
 	filter: drop-shadow(0 0 0.2rem dimgray);	
 }
+
+.tooltip {
+  color: white;
+  position: absolute;
+  text-align: center;
+  width: 60px;
+  height: 28px;
+  padding: 2px;
+  font: 12px sans-serif;
+  background: rgba(0,0,0,.8);
+  border: 2px solid black;
+  pointer-events: none;
+}
