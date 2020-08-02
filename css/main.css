@@ -1,3 +1,7 @@
+body {
+	font-size: 62.5%;
+}
+
 div {
     border-style: solid;
 	border-width: 1px;
@@ -31,11 +35,11 @@ div {
 
 .headerText {
 	text-align: center;
-	text: 16sp;
+	font-size: 1.6em;
 }
 
 .town {
-          fill: #ccc;
+    fill: #ccc;
 }
 
 .overTown {
