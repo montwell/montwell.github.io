@@ -60,7 +60,7 @@ function onMouseOutTown(path, townId) {
 		document.getElementById("townInfo").innerHTML = ""
 	} else {
 		document.getElementById("townInfo").innerHTML = 
-		'<span id="townInfoName">' + getTownName(townId) + '</span>';
+		'<span id="townInfoName">' + getTownName(clickedTown) + '</span>';
 	}
 }  
 
