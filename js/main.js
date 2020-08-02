@@ -68,6 +68,9 @@ function drawCasesGraph(townId){
 	if(townId != null) {
 		var townData = covidDataByTown[townId - 1]
 		console.log(townData)
+		var maxCases = d3.max(townData.values, d => d.values[0]["Total cases "])
+		console.log("Max Cases: " + maxCases);
+			
 		
 		var casesGraphDiv = d3.select("#casesGraph");
 		
@@ -88,8 +91,7 @@ function drawCasesGraph(townId){
 			
 		var y = d3.scaleLinear()
 			.domain([0, d3.max(townData.values, d => d.values[0]["Total cases "])])
-			.range([gHeight, 0]);
-			
+			.range([gHeight, 0]);			
 		
 		svg.append("g")
 			.attr("transform", "translate(" + margin.left + "," + (gHeight + margin.top) + ")")
