@@ -10,6 +10,10 @@ async function init() {
 	
 	covidDataByTown = d3.nest()
 		.key(function(d) {return d["Town number"];})
+		.rollup( function(v) { return {
+					name: v.Town
+				};
+			})		
 		.key(function(d) {return d["Last update date"];})
 		.entries(csvCovidData);	
 	
