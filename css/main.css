@@ -43,6 +43,7 @@ div {
 #graphs {
 	width: 100%;
 	visibility: hidden;
+	border-radius: 5px
 }
 
 .graph {
