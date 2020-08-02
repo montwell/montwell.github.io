@@ -69,7 +69,11 @@ function drawCasesGraph(townId){
 		var townData = covidDataByTown[townId - 1]
 		console.log(townData)
 		
-		var svg = d3.select("#casesGraph")
+		var casesGraphDiv = d3.select("#casesGraph");
+		
+		casesGraphDiv.selectAll("svg > *").remove();
+		
+		var svg = casesGraphDiv
 			.append("svg")
 			.attr('width', svgWidth)
 			.attr('height', svgHeight);
