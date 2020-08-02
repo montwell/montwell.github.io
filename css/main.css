@@ -68,10 +68,11 @@ div {
 	margin: 0 auto 0 auto;
 }
 
-.frame {
+.turning-point {
 	width: 220px;
 	height: 180px;
     display: inline-block;
+	font-size:1.4em;
 }
 
 .headerText {
