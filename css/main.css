@@ -29,6 +29,11 @@ div {
     display: inline-block;
 }
 
+.headerText {
+	text-align: center;
+	text: 16sp;
+}
+
 .town {
           fill: #ccc;
 }
