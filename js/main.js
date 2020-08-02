@@ -14,7 +14,7 @@ async function init() {
 	
 	console.log(csvCovidData);
 	
-	maxCases = d3.max(csvCovidData, d => d.columns["Total cases "]);
+	maxCases = d3.max(csvCovidData, d => parseInt(d["Total cases "]));
 	console.log("Max Total Cases: " + maxCases);
 	
 	covidDataByTown = d3.nest()
