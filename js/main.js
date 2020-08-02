@@ -131,6 +131,7 @@ function drawDeathsGraph(townId){
 		
 		var casesGraphDiv = d3.select("#deathsGraph");
 		
+		casesGraphDiv.attr("visibility", "visible");		
 		casesGraphDiv.selectAll("svg").remove();
 		
 		var svg = casesGraphDiv
@@ -168,6 +169,7 @@ function drawDeathsGraph(townId){
 			.attr("d", d3.line()
 				.x(d => x(new Date(d.key)))
 				.y(d => y(parseInt(d.values[0]["Total deaths"]))));
+				
 	}
 }
 

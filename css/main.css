@@ -1,6 +1,6 @@
 body {
 	font-size: 100%;
-	color: #666;
+	color: #555;
 }
 
 div {
@@ -45,6 +45,7 @@ div {
 }
 
 .graph {
+	visibility: hidden;
 	position: relative;
 	display: inline-block;
 	width:425px;
@@ -80,4 +81,8 @@ div {
 
 .overTown {
 	fill: #f00;
+}
+
+.dropshadow {
+	
 }
