@@ -114,6 +114,63 @@ function drawCasesGraph(townId){
 	}
 }
 
+function drawDeathsGraph(townId){	
+	var svgWidth = 425;
+	var svgHeight = 300;
+	
+	var margin = {top: 10, right: 30, bottom: 30, left: 60},
+		gWidth = 425 - margin.left - margin.right,
+		gHeight = 300 - margin.top - margin.bottom;
+	
+	if(townId != null) {
+		var townData = covidDataByTown[townId - 1].values
+		console.log(townData)
+		var maxCases = d3.max(townData.values, d => d.values[0]["Total deaths"])
+		console.log("Max Cases: " + maxCases);		
+			
+		
+		var casesGraphDiv = d3.select("#deathsGraph");
+		
+		casesGraphDiv.selectAll("svg").remove();
+		
+		var svg = casesGraphDiv
+			.append("svg")
+			.attr('width', svgWidth)
+			.attr('height', svgHeight);
+			
+		var g = svg.append("g")
+			.attr("transform", "translate(" + margin.left + "," + margin.top + ")")
+			.attr("class", "g-graph");
+		
+		var x = d3.scaleTime()
+			.domain(d3.extent(townData, d => new Date(d.key)))
+			.range([0, gWidth]);
+			
+		var y = d3.scaleLinear()
+			.domain([0, d3.max(townData, d => parseInt(d.values[0]["Total deaths"]))])
+			.range([gHeight, 0]);			
+		
+		svg.append("g")
+			.attr("transform", "translate(" + margin.left + "," + (gHeight + margin.top) + ")")
+			.call(d3.axisBottom(x).ticks(5));
+			
+		svg.append("g")
+			.attr("transform", "translate(" + margin.left + "," + margin.top + ")")
+			.call(d3.axisLeft(y));
+			
+		svg.append("g")
+			.attr("transform", "translate(" + margin.left + "," + margin.top + ")")			
+			.append("path")
+			.datum(townData)
+			.attr("fill", "none")
+			.attr("stroke", "#00f")
+			.attr("stroke-width", 1.5)
+			.attr("d", d3.line()
+				.x(d => x(new Date(d.key)))
+				.y(d => y(parseInt(d.values[0]["Total deaths"]))));
+	}
+}
+
 function onMouseOverTown(path, townId) {
 	path.transition(getEaseLinearTransition()).style('fill', "#00f");
 	
@@ -151,6 +208,7 @@ function onClickTown(path, townId) {
 	}
 	
 	drawCasesGraph(townId);
+	drawDeaths(townId);
 }
 
 function getEaseLinearTransition() {
