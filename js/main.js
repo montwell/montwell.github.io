@@ -72,7 +72,7 @@ function drawCasesGraph(townId){
 		var g = svg.append("g").attr("class", "g-graph");
 		
 		var x = d3.scaleTime()
-			.domain(d3.extent(townData.values, d => new Date(d.key))
+			.domain(d3.extent(townData.values, d => new Date(d.key)))
 			.range([0, width]);
 		
 		svg.append("g").attr("transform", "translate(0," + height + ")")
