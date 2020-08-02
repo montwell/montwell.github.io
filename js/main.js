@@ -3,6 +3,7 @@ var covidData;
 var clickedTown;
 
 async function init() {
+	console.log("version 0.01");
 	
 	geojson = await d3.json("data/ct-towns.geojson");
 	// load Covid Data
@@ -11,7 +12,7 @@ async function init() {
 }
 
 function drawMap() {
-	var width = 1000;
+	var width = 900;
 	var height = 700;	
 	var projection = d3.geoMercator().translate([width/2, height/2]).scale(25000).center([-72.7, 41.5]);
     var path = d3.geoPath().projection(projection);
