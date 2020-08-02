@@ -4,7 +4,7 @@ div {
 
 #map {
 	position: relative;
-    width: 1000px;
+    width: 900px;
     height: 700px;
 }
 
@@ -12,7 +12,7 @@ div {
 	position: absolute;
 	right:0;
 	bottom:0;
-	width: 700px;
+	width: 600px;
 	height: 200px;
 }
 
