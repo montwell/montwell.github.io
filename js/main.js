@@ -3,10 +3,10 @@ var covidData;
 var clickedTown;
 
 async function init() {
-	console.log("version 0.01");
+	console.log("version 0.02");
 	
 	geojson = await d3.json("data/ct-towns.geojson");
-	// load Covid Data
+	covidData = await d3.json("data/{todo}");
 	
 	drawMap();
 }
@@ -49,9 +49,13 @@ function onMouseOutTown(path, townId) {
 function onClickTown(path, townId) {
 	console.log(townId + " Clicked!");
 	greyMap();
-	clickedTown = townId;
-	path.style('fill', '#00f');
-	path.style('z-index', '1000');
+	if(clickedTown != townId) {
+		clickedTown = townId;
+		path.style('fill', '#00f');
+	} else {
+		clickedTown = 0;
+		path.style('fill', '#ccc');
+	}
 }
 
 function getEaseLinearTransition() {
