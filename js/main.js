@@ -3,7 +3,7 @@ var covidData;
 
 async function init() {
 	
-	geoJson = await d3.json("data/ct-towns.geojson");
+	geojson = await d3.json("data/ct-towns.geojson");
 	// load Covid Data
 	
 	drawMap();
