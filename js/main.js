@@ -65,10 +65,7 @@ function drawCasesGraph(townId){
 		gWidth = 425 - margin.left - margin.right,
 		gHeight = 300 - margin.top - margin.bottom;
 	
-	if(townId != null) {
-		var parseDate = d3.time.format("%m/%e/%Y").parse,
-			dateFormatter = d3.time.format("%m/%d/%y");
-		
+	if(townId != null) {		
 		var townData = covidDataByTown[townId - 1].values
 		console.log(townData)
 		var maxCases = d3.max(townData.values, d => d.values[0]["Total cases "])
