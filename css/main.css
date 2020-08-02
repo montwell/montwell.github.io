@@ -2,6 +2,11 @@ div {
     border-style: solid;
 }
 
+#main {
+	width:900px;
+	margin: 0 auto 0 auto;
+}
+
 #map {
 	position: relative;
     width: 900px;
@@ -19,12 +24,12 @@ div {
 .frame {
 	width: 900/4
 	height: 50px
-    block: inline;
+    display: block-inline;
 }
 
 .town {
           fill: #ccc;
-      }
+}
 
 .overTown {
 	fill: #f00;
