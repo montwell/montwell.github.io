@@ -1,8 +1,8 @@
 var geojson;
 var covidDataByTown;
-var clickedTown = "";
 var mapColorScale;
-var previousColor;
+var previouslySelectedTownId = null;
+var previouslySelectedTown = null;
 
 async function init() {
 	console.log("version 0.03.200731");
@@ -56,48 +56,47 @@ function drawMap() {
 }
 
 function onMouseOverTown(path, townId) {
-	console.log(d3.select(path))
 	path.transition(getEaseLinearTransition()).style('fill', "#00f");
 	
 	setTownInfo(townId);
 }
 
 function onMouseOutTown(path, townId) {	  
-    if(clickedTown != townId) {
-		path.transition(getEaseLinearTransition()).style('fill', "#ccc");
+    if(previouslySelectedTownId != townId) {
+		path.transition(getEaseLinearTransition())
+			.style('fill', d => mapColorScale(getLatestData(townId)["Total cases "]))
 	}
 	
-	if(clickedTown == "") {
-		clearTownInfo();
+	if(previouslySelectedTownId != null) {
+		setTownInfo(previouslySelectedTownId);
 	} else {
-		setTownInfo(clickedTown);
+		clearTownInfo();
 	}
 }  
 
-function onClickTown(path, townId) {
-	console.log(townId + " Clicked!");
-	greyMap();
+function onClickTown(path, townId) {		
 	
-	if(clickedTown != townId) {
-		clickedTown = townId;
+	if(previouslySelectedTownId != null) {
+		var latestData = getLatestData(previouslySelectedTownId);
+		previouslySelectedTown
+			.style('fill', d => mapColorScale(getLatestData(previouslySelectedTownId)["Total cases "]))
+	}
+	
+	if(previouslySelectedTownId != townId) {
+		previouslySelectedTownId = townId;
+		previouslySelectedTown = path;
 		path.style('fill', '#00f');
 	} else {
-		clickedTown = "";
-	}	
+		previouslySelectedTownId = null;
+		previouslySelectedTown = null;
+	}
+	
 }
 
 function getEaseLinearTransition() {
 	return d3.transition()
       .duration(400)
       .ease(d3.easeLinear);
-}
-
-function greyMap() {
-	d3.select("#map")
-	  .select("svg")
-	  .select("g")
-	  .selectAll("path")
-	  .style('fill', '#ccc');
 }
 
 function setTownInfo(townId) {
