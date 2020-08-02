@@ -22,13 +22,17 @@ div {
 	position: absolute;
 	right:0;
 	bottom:0;
-	width: 570px;
+	width: 400px;
 	height: 180px;
 }
 
 #townInfoName {
 	color:#00f;
 	font-size: 2.2em;
+}
+
+.townInfoDetails {
+	margin-left:20px;
 }
 
 #graphs {

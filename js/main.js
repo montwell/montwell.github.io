@@ -93,8 +93,8 @@ function setTownInfo(townId) {
 	
 	document.getElementById("townInfo").innerHTML = 
 		'<div id="townInfoName">' + latestData.Town + '</div>'
-		+ '<div id="townInfoTotalCases">Total Cases: ' + latestData["Total cases "] + '</div>'
-		+ '<div id="townInfoTotalDeaths">Total Deaths: ' + latestData["Total deaths"] + '</div>';
+		+ '<div class="townInfoDetails">Total Cases: ' + latestData["Total cases "] + '</div>'
+		+ '<div class="townInfoDetails">Total Deaths: ' + latestData["Total deaths"] + '</div>';
 }
 
 function clearTownInfo() {
