@@ -1,6 +1,7 @@
 var geojson;
 var covidDataByTown;
 var clickedTown = "";
+var mapColorScale = d3.scaleLinear().domain([0,1]).range(["green","red"])
 
 async function init() {
 	console.log("version 0.03.200731");
@@ -38,6 +39,7 @@ function drawMap() {
 	  .append("path")
 	  .attr("class", "town")
 	  .attr('d', path)
+	  .style('fill', d => mapColorScale(d)
 	  .style('stroke', "white")	  
 	  .on("mouseover", function(d) {onMouseOverTown(d3.select(this), d.properties.town_no);})
 	  .on("mouseout", function(d) {onMouseOutTown(d3.select(this), d.properties.town_no);})
