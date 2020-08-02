@@ -1,5 +1,6 @@
 var geojson;
 var covidData;
+var clickedTown;
 
 async function init() {
 	
@@ -39,12 +40,15 @@ function onMouseOverTown(path, townId) {
 }
 
 function onMouseOutTown(path, townId) {	  
-	path.transition(getEaseLinearTransition()).style('fill', "#ccc");
+    if(clickedTown != townId) {
+		path.transition(getEaseLinearTransition()).style('fill', "#ccc");
+	}
 }  
 
 function onClickTown(path, townId) {
 	console.log(townId + " Clicked!");
 	greyMap();
+	clickedTown = townId;
 	path.style('fill', '#00f');
 	path.style('z-index', '1000');
 }
