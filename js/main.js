@@ -108,8 +108,8 @@ function drawCasesGraph(townId){
 			.attr("stroke", "#00f")
 			.attr("stroke-width", 1.5)
 			.attr("d", d3.line()
-				.x(d => new Date(d.key))
-				.y(d => parseInt(d.values[0]["Total cases "])));
+				.x(d => x(new Date(d.key)))
+				.y(d => y(parseInt(d.values[0]["Total cases "]))));
 	}
 }
 
