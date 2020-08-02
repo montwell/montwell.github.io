@@ -66,10 +66,10 @@ function drawCasesGraph(townId){
 		gHeight = 300 - margin.top - margin.bottom;
 	
 	if(townId != null) {
-		var townData = covidDataByTown[townId - 1]
+		var townData = covidDataByTown[townId - 1].values
 		console.log(townData)
 		var maxCases = d3.max(townData.values, d => d.values[0]["Total cases "])
-		console.log("Max Cases: " + maxCases);
+		console.log("Max Cases: " + maxCases);		
 			
 		
 		var casesGraphDiv = d3.select("#casesGraph");
@@ -86,11 +86,11 @@ function drawCasesGraph(townId){
 			.attr("class", "g-graph");
 		
 		var x = d3.scaleTime()
-			.domain(d3.extent(townData.values, d => new Date(d.key)))
+			.domain(d3.extent(townData, d => new Date(d.key)))
 			.range([0, gWidth]);
 			
 		var y = d3.scaleLinear()
-			.domain([0, d3.max(townData.values, d => parseInt(d.values[0]["Total cases "]))])
+			.domain([0, d3.max(townData, d => parseInt(d.values[0]["Total cases "]))])
 			.range([gHeight, 0]);			
 		
 		svg.append("g")
@@ -100,6 +100,14 @@ function drawCasesGraph(townId){
 		svg.append("g")
 			.attr("transform", "translate(" + margin.left + "," + margin.top + ")")
 			.call(d3.axisLeft(y));
+			
+		svg.append("path")
+			.datum(townData)
+			.attr("stroke", "#00f")
+			.attr("stroke-width", 1.5)
+			.attr("d", d3.line()
+				.x(d => new Date(d.key))
+				.y(d => parseInt(d.values[0]["Total cases "])));
 	}
 }
 
