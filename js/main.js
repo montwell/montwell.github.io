@@ -6,7 +6,7 @@ async function init() {
 	console.log("version 0.02");
 	
 	geojson = await d3.json("data/ct-towns.geojson");
-	covidData = await d3.json("data/{todo}");
+	//covidData = await d3.json("data/{todo}");
 	
 	drawMap();
 }
@@ -54,7 +54,6 @@ function onClickTown(path, townId) {
 		path.style('fill', '#00f');
 	} else {
 		clickedTown = 0;
-		path.style('fill', '#ccc');
 	}
 }
 
