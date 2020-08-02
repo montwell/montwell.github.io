@@ -13,7 +13,7 @@ async function init() {
 	var maxCases = d3.max(csvCovidData, d => parseInt(d["Total cases "]));
 	console.log("Max Total Cases: " + maxCases);
 	
-	mapColorScale = d3.scaleLinear().domain([0,maxCases]).range(["green","red"])
+	mapColorScale = d3.scaleLinear().domain([0,maxCases]).range(["#FFDDDD","FF0000"])
 	
 	covidDataByTown = d3.nest()
 		.key(d => d["Town number"])
