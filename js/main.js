@@ -89,12 +89,24 @@ function greyMap() {
 }
 
 function setTownInfo(townId) {
+	var latestData = getLatestData(townId)
+	
 	document.getElementById("townInfo").innerHTML = 
-		'<span id="townInfoName">' + getTownName(townId) + '</span>';
+		'<span id="townInfoName">' + latestData.Town + '</span>'
+		+ '<span id="townInfoTotalCases">Total Cases' + latestData["Total cases "] + '</span>'
+		+ '<span id="townInfoTotalDeaths">Total Deaths' + latestData["Total deaths"] + '</span>';
 }
 
 function clearTownInfo() {
 	document.getElementById("townInfo").innerHTML = ""
+}
+
+function getLatestData() {
+	var townData = covidDataByTown[townId - 1]
+	console.log(townData)
+	var latestData = townData.values[townData.values.length - 1]
+	console.log(latestData)
+	return latestData.values[0];
 }
 
 function getTownName(townId) {
