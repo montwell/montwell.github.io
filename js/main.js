@@ -87,7 +87,7 @@ function drawCasesGraph(townId){
 			.range([0, gWidth]);
 		
 		svg.append("g").attr("transform", "translate(0," + gHeight + ")")
-			.call(d3.axisBottom(x).ticks(5);
+			.call(d3.axisBottom(x).ticks(5));
 	}
 }
 
