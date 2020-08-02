@@ -30,7 +30,8 @@ function drawMap() {
 	  .attr('d', path)
 	  .style('stroke', "white")	  
 	  .on("mouseover", function(d) {onMouseOverTown(d.properties.town_no);})
-	  .on("mouseout", function(d) {onMouseOutTown(d.properties.town_no);});
+	  .on("mouseout", function(d) {onMouseOutTown(d.properties.town_no);})
+	  .on("click", function(d) {onClickTown(d.properties.town_no);});
 }
 
 function onMouseOverTown(townId) {
@@ -38,5 +39,8 @@ function onMouseOverTown(townId) {
 }
 
 function onMouseOutTown(townId) {
-	console.log("over town: " + townId)
+}
+
+function onClickTown(townId) {
+	console.log(townId + "Clicked!")
 }
