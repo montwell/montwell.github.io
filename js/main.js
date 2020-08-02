@@ -1,13 +1,19 @@
 var geojson;
-var covidData;
+var covidDataByTown;
 var clickedTown;
 
 async function init() {
 	console.log("version 0.02");
 	
 	geojson = await d3.json("data/ct-towns.geojson");
-	//covidData = await d3.json("data/{todo}");
+	var csvCovidData = await d3.json("data/covid-by-town");
 	
+	covidDataByTown = csvCovidData.nest()
+		.key(function(d) {return d["Town number"];})
+		.key(function(d) {return d["Last update_date"]'})
+		.entries(csvCovidData);	
+	
+	console.log(covidDataByTown);
 	drawMap();
 }
 
