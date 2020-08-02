@@ -58,9 +58,12 @@ function drawMap() {
 }
 
 function drawCasesGraph(townId){	
+	var svgWidth = 425;
+	var svgHeight = 300;
+	
 	var margin = {top: 10, right: 30, bottom: 30, left: 60},
-		width = 425 - margin.left - margin.right,
-		height = 300 - margin.top - margin.bottom;
+		gWidth = 425 - margin.left - margin.right,
+		gHeight = 300 - margin.top - margin.bottom;
 	
 	if(townId != null) {
 		var townData = covidDataByTown[townId - 1]
@@ -68,16 +71,18 @@ function drawCasesGraph(townId){
 		
 		var svg = d3.select("#casesGraph")
 			.append("svg")
-			.attr('width', width)
-			.attr('height', height);
+			.attr('width', svgWidth)
+			.attr('height', svgHeight);
 			
-		var g = svg.append("g").attr("class", "g-graph");
+		var g = svg.append("g")
+			.attr("transform", "translate(" + margin.left + "," + margin.top + ")")
+			.attr("class", "g-graph");
 		
 		var x = d3.scaleTime()
 			.domain(d3.extent(townData.values, d => new Date(d.key)))
-			.range([0, width]);
+			.range([0, gWidth]);
 		
-		svg.append("g").attr("transform", "translate(0," + height + ")")
+		svg.append("g").attr("transform", "translate(0," + gHeight + ")")
 			.call(d3.axisBottom(x));
 	}
 }
