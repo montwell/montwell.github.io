@@ -26,6 +26,16 @@ div {
 	height: 180px;
 }
 
+#graphs {
+	width: 100%;
+}
+
+.graph {
+	display: inline-block;
+	width:425px;
+	height:300px;
+}
+
 .center-horizontally {
 	margin: 0 auto 0 auto;
 }
