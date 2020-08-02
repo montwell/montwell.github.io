@@ -1,6 +1,9 @@
 var geojson;
 var covidDataByTown;
+var maxCases;
+
 var clickedTown = "";
+
 var mapColorScale = d3.scaleLinear().domain([0,1]).range(["green","red"])
 
 async function init() {
@@ -8,6 +11,8 @@ async function init() {
 	
 	geojson = await d3.json("data/ct-towns.geojson");
 	var csvCovidData = await d3.csv("data/covid-by-town.csv");
+	
+	console.log(csvCovidData);
 	
 	covidDataByTown = d3.nest()
 		.key(d => d["Town number"])
