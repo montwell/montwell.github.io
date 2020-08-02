@@ -10,7 +10,7 @@ async function init() {
 	
 	covidDataByTown = csvCovidData.nest()
 		.key(function(d) {return d["Town number"];})
-		.key(function(d) {return d["Last update_date"]'})
+		.key(function(d) {return d["Last update_date"];})
 		.entries(csvCovidData);	
 	
 	console.log(covidDataByTown);
