@@ -2,6 +2,19 @@ div {
     border-style: solid;
 }
 
+#map {
+        width: 1000px;
+        height: 700px;
+}
+
 .frame {
     block: inline;
+}
+
+.town {
+          fill: #ccc;
+      }
+
+.overTown {
+	fill: #f00;
 }
