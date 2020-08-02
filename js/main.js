@@ -87,7 +87,7 @@ function drawCasesGraph(townId){
 			.range([0, gWidth]);
 			
 		var y = d3.scaleLinear()
-			.domain(d3.max(townData.values, d => d.values["Total deaths"]))
+			.domain(d3.max(townData.values, d => d.values[0]["Total deaths"]))
 			.range([gHeight, 0]);
 			
 		
