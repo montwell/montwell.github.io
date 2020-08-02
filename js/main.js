@@ -71,7 +71,7 @@ function drawCasesGraph(townId){
 		
 		var casesGraphDiv = d3.select("#casesGraph");
 		
-		casesGraphDiv.selectAll("svg > *").remove();
+		casesGraphDiv.selectAll("svg").remove();
 		
 		var svg = casesGraphDiv
 			.append("svg")
