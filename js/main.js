@@ -1,6 +1,6 @@
 var geojson;
 var covidDataByTown;
-var clickedTown = 0;
+var clickedTown = "";
 
 async function init() {
 	console.log("version 0.03.200731");
@@ -47,8 +47,7 @@ function drawMap() {
 function onMouseOverTown(path, townId) {
 	path.transition(getEaseLinearTransition()).style('fill', "#00f");
 	
-	document.getElementById("townInfo").innerHTML = 
-		'<span id="townInfoName">' + getTownName(townId) + '</span>';
+	setTownInfo(townId);
 }
 
 function onMouseOutTown(path, townId) {	  
@@ -57,10 +56,9 @@ function onMouseOutTown(path, townId) {
 	}
 	
 	if(clickedTown == 0) {
-		document.getElementById("townInfo").innerHTML = ""
+		clearTownInfo();
 	} else {
-		document.getElementById("townInfo").innerHTML = 
-		'<span id="townInfoName">' + getTownName(clickedTown) + '</span>';
+		setTownInfo(townId);
 	}
 }  
 
@@ -71,7 +69,7 @@ function onClickTown(path, townId) {
 		clickedTown = townId;
 		path.style('fill', '#00f');
 	} else {
-		clickedTown = 0;
+		clickedTown = "";
 	}	
 }
 
@@ -89,6 +87,15 @@ function greyMap() {
 	  .style('fill', '#ccc');
 }
 
+function setTownInfo(townId) {
+	document.getElementById("townInfo").innerHTML = 
+		'<span id="townInfoName">' + getTownName(clickedTown) + '</span>';
+}
+
+function clearTownInfo() {
+	document.getElementById("townInfo").innerHTML = ""
+}
+
 function getTownName(townId) {
 	var townData = covidDataByTown[townId - 1]
 	console.log(townData)
@@ -96,3 +103,4 @@ function getTownName(townId) {
 	console.log(latestData)
 	return latestData.values[0].Town;
 }
+
