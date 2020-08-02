@@ -10,10 +10,7 @@ async function init() {
 	
 	covidDataByTown = d3.nest()
 		.key(function(d) {return d["Town number"];})
-		.sortKeys(function (a,b) { 
-		    console.log(a);
-			console.log(b);
-			return a.key - b.key; })
+		.sortKeys((a,b) => parseInt(a.key) > parseInt(b.key))
 		.key(function(d) {return d["Last update date"];})
 		.entries(csvCovidData);
 	
