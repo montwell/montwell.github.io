@@ -116,6 +116,7 @@ function drawCasesGraph(townId){
 				.x(d => x(new Date(d.key)))
 				.y(d => y(parseInt(d.values[0]["Total cases "]))))
 			.on('mouseover', d => {
+				console.log(d);
 				tooltip
 					.transition()
 					.duration(200)
