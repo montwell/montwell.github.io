@@ -91,10 +91,13 @@ function drawCasesGraph(townId){
 			.range([gHeight, 0]);
 			
 		
-		svg.append("g").attr("transform", "translate(0," + gHeight + ")")
+		svg.append("g")
+			.attr("transform", "translate(0," + gHeight + ")")
 			.call(d3.axisBottom(x).ticks(5));
 			
-		svg.append("g").call(d3.axisLeft(y));
+		svg.append("g")
+			.attr("transform", "translate(" + margin.left + "," + margin.top + ")")
+			.call(d3.axisLeft(y));
 	}
 }
 
