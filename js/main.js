@@ -61,7 +61,7 @@ function drawCasesGraph(townId){
 	var svgWidth = 425;
 	var svgHeight = 300;
 	
-	var margin = {top: 10, right: 30, bottom: 30, left: 60},
+	var margin = {top: 60, right: 30, bottom: 30, left: 60},
 		gWidth = 425 - margin.left - margin.right,
 		gHeight = 300 - margin.top - margin.bottom;
 	
@@ -118,7 +118,7 @@ function drawDeathsGraph(townId){
 	var svgWidth = 425;
 	var svgHeight = 300;
 	
-	var margin = {top: 10, right: 30, bottom: 30, left: 60},
+	var margin = {top: 60, right: 30, bottom: 30, left: 60},
 		gWidth = 425 - margin.left - margin.right,
 		gHeight = 300 - margin.top - margin.bottom;
 	
