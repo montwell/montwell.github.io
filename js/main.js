@@ -44,8 +44,9 @@ function onMouseOutTown(path, townId) {
 }  
 
 function onClickTown(path, townId) {
-	console.log(townId + " Clicked!")
-	path.style('stroke', '#f00')
+	console.log(townId + " Clicked!");
+	path.style('stroke', '#f00');
+	path.style('zIndex', '10');
 }
 
 function getEaseLinearTransition() {
