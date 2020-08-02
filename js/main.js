@@ -55,10 +55,10 @@ function onMouseOutTown(path, townId) {
 		path.transition(getEaseLinearTransition()).style('fill', "#ccc");
 	}
 	
-	if(clickedTown == 0) {
+	if(clickedTown == "") {
 		clearTownInfo();
 	} else {
-		setTownInfo(townId);
+		setTownInfo(clickedTown);
 	}
 }  
 
