@@ -26,6 +26,11 @@ div {
 	height: 180px;
 }
 
+#townInfoName {
+	color:#00f;
+	font-size: 2.2em;
+}
+
 #graphs {
 	width: 100%;
 }
