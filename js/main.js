@@ -65,6 +65,7 @@ function onMouseOutTown(path, townId) {
 function onClickTown(path, townId) {
 	console.log(townId + " Clicked!");
 	greyMap();
+	
 	if(clickedTown != townId) {
 		clickedTown = townId;
 		path.style('fill', '#00f');
@@ -89,7 +90,7 @@ function greyMap() {
 
 function setTownInfo(townId) {
 	document.getElementById("townInfo").innerHTML = 
-		'<span id="townInfoName">' + getTownName(clickedTown) + '</span>';
+		'<span id="townInfoName">' + getTownName(townId) + '</span>';
 }
 
 function clearTownInfo() {
