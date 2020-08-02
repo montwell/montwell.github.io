@@ -122,7 +122,7 @@ function drawCasesGraph(townId){
 			.append('circle')
 			.attr('r', 5)
 			.attr('cx', d => x(new Date(d.key)))
-			.attr('cy', d => y(parseInt(d.values[0]["Total cases "]))
+			.attr('cy', d => y(parseInt(d.values[0]["Total cases "])))
 			.attr('stroke-width', '20px')
 			.attr('stroke', 'rgba(0,0,0,0)')
 			.style('cursor', 'pointer')
