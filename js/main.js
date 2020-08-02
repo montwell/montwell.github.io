@@ -1,6 +1,10 @@
 var geojson;
 var covidData;
 
+var transitionEaseLinear = d3.transition()
+      .duration(400)
+      .ease(d3.easeLinear);
+
 async function init() {
 	
 	geojson = await d3.json("data/ct-towns.geojson");
@@ -36,23 +40,14 @@ function drawMap() {
 
 function onMouseOverTown(path, townId) {
 	console.log("over town: " + townId);
-	
-	var t = d3.transition()
-      .duration(750)
-      .ease(d3.easeLinear);
-	
-	//path.transition(t).style("fill", "#FF000000");
-	path.transition(t).style('fill', "#ff0000");
+	path.transition(transitionEaseLinear).style('fill', "#ff0000");
 }
 
-function onMouseOutTown(path, townId) {
-	var t = d3.transition()
-      .duration(750)
-      .ease(d3.easeLinear);
-	  
-	path.transition(t).style('fill', "#ccc");
+function onMouseOutTown(path, townId) {	  
+	path.transition(transitionEaseLinear).style('fill', "#ccc");
 }  
 
-function onClickTown(townId) {
+function onClickTown(path, townId) {
 	console.log(townId + "Clicked!")
+	path.style('stroke', '#f00')
 }
