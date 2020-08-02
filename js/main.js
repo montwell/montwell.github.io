@@ -42,11 +42,15 @@ function onMouseOverTown(path, townId) {
       .ease(d3.easeLinear);
 	
 	//path.transition(t).style("fill", "#FF000000");
-	path.transition(t).classed("overTown", true);
+	path.transition(t).style('fill', "#ff0000");
 }
 
 function onMouseOutTown(path, townId) {
-	path.transition(t).classed("overTown", false);
+	var t = d3.transition()
+      .duration(750)
+      .ease(d3.easeLinear);
+	  
+	path.transition(t).style('fill', "#ccc");
 }  
 
 function onClickTown(townId) {
