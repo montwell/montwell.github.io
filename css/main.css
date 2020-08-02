@@ -45,7 +45,6 @@ div {
 }
 
 .graph {
-	visibility: hidden;
 	position: relative;
 	display: inline-block;
 	width:425px;
