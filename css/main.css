@@ -12,6 +12,8 @@ div {
 
 #header {
 	margin: 0 auto 0 auto;
+	text-align: center;
+	font-size: 1.6em;
 }
 
 #map {
