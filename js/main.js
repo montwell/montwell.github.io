@@ -6,7 +6,7 @@ async function init() {
 	console.log("version 0.02");
 	
 	geojson = await d3.json("data/ct-towns.geojson");
-	var csvCovidData = await d3.json("data/covid-by-town.csv");
+	var csvCovidData = await d3.csv("data/covid-by-town.csv");
 	
 	covidDataByTown = csvCovidData.nest()
 		.key(function(d) {return d["Town number"];})
