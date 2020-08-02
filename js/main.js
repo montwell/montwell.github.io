@@ -35,8 +35,7 @@ function drawMap() {
 }
 
 function onMouseOverTown(path, townId) {
-	console.log("over town: " + townId);
-	path.transition(getEaseLinearTransition()).style('fill', "#f00");
+	path.transition(getEaseLinearTransition()).style('fill', "#00f");
 }
 
 function onMouseOutTown(path, townId) {	  
@@ -45,12 +44,21 @@ function onMouseOutTown(path, townId) {
 
 function onClickTown(path, townId) {
 	console.log(townId + " Clicked!");
-	path.style('stroke', '#f00');
-	path.style('z-index', '10');
+	greyMap();
+	path.style('fill', '#00f');
+	path.style('z-index', '1000');
 }
 
 function getEaseLinearTransition() {
 	return d3.transition()
       .duration(400)
       .ease(d3.easeLinear);
+}
+
+function greyMap() {
+	d3.select("#map")
+	  .select("svg")
+	  .select("g")
+	  .selectAll("path")
+	  .style('fill', '#ccc');
 }
