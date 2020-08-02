@@ -10,12 +10,9 @@ async function init() {
 	
 	covidDataByTown = d3.nest()
 		.key(function(d) {return d["Town number"];})
-		.rollup( function(v) { return {
-					name: v.Town
-				};
-			})		
 		.key(function(d) {return d["Last update date"];})
-		.entries(csvCovidData);	
+		.entries(csvCovidData)
+		.map(d => d.key);
 	
 	console.log(covidDataByTown);
 	drawMap();
@@ -65,6 +62,8 @@ function onClickTown(path, townId) {
 	} else {
 		clickedTown = 0;
 	}
+	
+	console.log(covidDataByTown.get(townId))
 }
 
 function getEaseLinearTransition() {
