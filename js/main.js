@@ -8,7 +8,7 @@ var turningPoints = JSON.parse('['
 	+ '{"date":"03/26/2020","text":"The total number of confirmed COVID-19 infections in Connecticut reach 1,000. Lamont limits gatherings to five people"},' +
 	+ '{"date":"","text":""},' +
 	+ '{"date":"","text":""},' +
-	+ '{"date":"","text":""},' +
+	+ '{"date":"","text":""}' +
 	+ ']');
 
 async function init() {
