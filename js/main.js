@@ -4,12 +4,12 @@ var mapColorScale;
 var previouslySelectedTownId = null;
 var previouslySelectedTown = null;
 
-var turningPoints = JSON.parse('['
-	+ '{"date":"03/26/2020","text":"The total number of confirmed COVID-19 infections in Connecticut reach 1,000. Lamont limits gatherings to five people"},' +
-	+ '{"date":"","text":""},' +
-	+ '{"date":"","text":""},' +
-	+ '{"date":"","text":""}' +
-	+ ']');
+var turningPoints = [
+	{"date":"03/26/2020","text":"The total number of confirmed COVID-19 infections in Connecticut reach 1,000. Lamont limits gatherings to five people"},
+	{"date":"","text":""},
+	{"date":"","text":""},
+	{"date":"","text":""}
+	];
 
 async function init() {
 	console.log("version 0.03.200731");
