@@ -272,10 +272,10 @@ async function onClickTown(path, townId) {
 		previouslySelectedTown = path;
 		path.style('fill', '#00f');
 		
-		await d3.select("#graphs").transition().duration(800).style('opacity', 0).end();
+		await d3.select("#graphs").transition().duration(400).style('opacity', 0).end();
 		drawCasesGraph(townId);
 		drawDeathsGraph(townId);
-		d3.select("#graphs").transition().duration(1200).style('opacity', 1);
+		d3.select("#graphs").transition().duration(800).style('opacity', 1);
 		
 	} else {
 		console.log("Town unclicked");
