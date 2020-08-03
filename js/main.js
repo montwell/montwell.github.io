@@ -153,6 +153,8 @@ function drawCasesGraph(townId){
 				.style('opacity', 0);
 			});
 			
+		console.log(turningPoints);
+			
 		svg.append("g")
 			.attr("transform", "translate(" + margin.left + "," + margin.top + ")")			
 			.selectAll('circle')
