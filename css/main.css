@@ -43,6 +43,7 @@ div {
 
 #graphs {
 	width: 100%;
+	opacity: 0;
 }
 
 .graph {
