@@ -259,7 +259,7 @@ function onMouseOutTown(path, townId) {
 	}
 }  
 
-function onClickTown(path, townId) {		
+async function onClickTown(path, townId) {		
 	
 	if(previouslySelectedTownId != null) {
 		var latestData = getLatestData(previouslySelectedTownId);
@@ -272,7 +272,7 @@ function onClickTown(path, townId) {
 		previouslySelectedTown = path;
 		path.style('fill', '#00f');
 		
-		await d3.select("#graphs").transition().duration(800).style('opacity', 0);
+		await d3.select("#graphs").transition().duration(800).style('opacity', 0).end();
 		drawCasesGraph(townId);
 		drawDeathsGraph(townId);
 		d3.select("#graphs").transition().duration(1200).style('opacity', 1);
