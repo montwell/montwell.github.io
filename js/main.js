@@ -136,8 +136,8 @@ function drawCasesGraph(townId){
 				.style('opacity', 0.9);
 			  tooltip
 				.html(d.key + '<br/>' + d.values[0]["Total cases "])
-				.style('left', d3.event.pageX + 'px')
-				.style('top', d3.event.pageY - 28 + 'px');
+				.style('left', d3.event.pageX + 10 + 'px')
+				.style('top', d3.event.pageY + 28 + 'px');
 			})
 			.on('mouseout', () => {
 			  tooltip
