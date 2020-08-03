@@ -8,7 +8,7 @@ var turningPoints = [
 	{"date":"03/26/2020","text":"The total number of confirmed COVID-19 infections in Connecticut reach 1,000. Lamont limits gatherings to five people"},
 	{"date":"04/17/2020","text":"Deaths from the coronavirus in Connecticut reach 1,000. Lamont signs executive order mandating face coverings in public."},
 	{"date":"05/20/2020","text":"Gov. Lamont's stay-at-home order is lifted, Connecticut begins phase 1 of a three-phase plan to reopen."},
-	{"date":"06/17/2020","text":"Phase 2 begins. Indoor dining, hotels and gyms are allowed to open."}
+	{"date":"06/17/2020","text":"Phase 2 begins. Indoor dining, hotels and gyms are allowed to open."},
 	{"date":"07/06/2020","text":"Lamont suspends Phase 3 reopening for bars and public gatherings as cases surge nationally."}
 	];
 
