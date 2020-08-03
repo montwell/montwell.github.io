@@ -5,7 +5,7 @@ var previouslySelectedTownId = null;
 var previouslySelectedTown = null;
 
 var turningPoints = JSON.parse('['
-	+ '{"date":"","text":""},' +
+	+ '{"date":"03/26/2020","text":"The total number of confirmed COVID-19 infections in Connecticut reach 1,000. Lamont limits gatherings to five people"},' +
 	+ '{"date":"","text":""},' +
 	+ '{"date":"","text":""},' +
 	+ '{"date":"","text":""},' +
@@ -221,10 +221,10 @@ function drawDeathsGraph(townId){
 			.data(townData)
 			.enter()
 			.append('circle')
-			.attr('r', 5)
+			.attr('r', 3)
 			.attr('cx', d => x(new Date(d.key)))
 			.attr('cy', d => y(parseInt(d.values[0]["Total deaths"])))
-			.attr('stroke-width', '20px')
+			.attr('stroke-width', '5px')
 			.attr('stroke', 'rgba(0,0,0,0)')
 			.attr('fill', 'rgba(0,0,0,0)')
 			.on('mouseover', d => {
