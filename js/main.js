@@ -179,7 +179,7 @@ function getCasesFromDate(townData, date) {
 		if(townData[i].key) {
 			console.log("Found at " + i);
 			console.log("Total cases " + townData[0].values[0]["Total cases "]);
-			return townData[0].values[0]["Total cases "];
+			return parseInt(townData[0].values[0]["Total cases "]);
 		}
 	}
 }
