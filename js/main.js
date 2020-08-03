@@ -290,7 +290,7 @@ function drawDeathsGraph(townId){
 	}
 }
 
-function getCasesFromDate(townData, date) {
+function getDeathsFromDate(townData, date) {
 	for(i = 0; i < townData.length; i++) {
 		if(townData[i].key == date) {
 			return parseInt(townData[i].values[0]["Total deaths"]);
