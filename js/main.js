@@ -51,7 +51,8 @@ function drawMap() {
 	  .attr("class", "town")
 	  .attr('d', path)
 	  .style('fill', d => mapColorScale(getLatestData(d.properties.town_no)["Total cases "]))
-	  .style('stroke', "white")	  
+	  .style('stroke', "white")	
+	  .style('cursor', 'pointer')	  
 	  .on("mouseover", function(d) {onMouseOverTown(d3.select(this), d.properties.town_no);})
 	  .on("mouseout", function(d) {onMouseOutTown(d3.select(this), d.properties.town_no);})
 	  .on("click", function(d) {onClickTown(d3.select(this), d.properties.town_no);});
