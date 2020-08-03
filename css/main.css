@@ -46,6 +46,11 @@ div {
 	opacity: 0;
 }
 
+#graphHelp {
+	width: 100%;
+	opacity: 1;
+}
+
 .graph {
 	position: relative;
 	display: inline-block;
