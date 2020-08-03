@@ -161,13 +161,13 @@ function drawCasesGraph(townId){
 			.append('circle')
 			.attr('r', 10)
 			.attr('cx', d => x(new Date(d.date)))
-			.attr('cy', d => y(getYFromDate(townData, d.date))
+			.attr('cy', d => y(getYFromDate(townData, d.date)))
 			.attr('stroke-width', '5px')
 			.attr('stroke', 'rgba(0,0,0,0)')
 			.attr('fill', 'rgba(0,0,0,0)')
 			.style('cursor', 'pointer')
 			.on('click', d => {
-				console.log(d + "");
+				console.log(d);
 			});			
 	}
 }
