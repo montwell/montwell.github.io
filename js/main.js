@@ -174,7 +174,7 @@ function drawCasesGraph(townId){
 
 function getYFromDate(townData, date) {
 	console.log("looking for " + date);
-	for(int i = 0; i < townData.length; i++) {
+	for(i = 0; i < townData.length; i++) {
 		if(townData[i].key) {
 			console.log("Found at " + i);
 			return 0;
