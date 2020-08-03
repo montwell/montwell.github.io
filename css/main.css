@@ -44,7 +44,7 @@ div {
 #graphContainer {
 	position: relative;
 	width: 100%;
-	height: 650px;
+	height: 550px;
 }
 
 #graphs {
@@ -52,6 +52,7 @@ div {
 	top:0px;
 	left:0px;
 	width: 100%;
+	height: 550px;
 	opacity: 0;
 }
 
