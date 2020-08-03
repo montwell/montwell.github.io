@@ -129,7 +129,7 @@ function drawCasesGraph(townId){
 			.style('cursor', 'pointer')
 			.on('click', d => {
 				console.log(d.text);
-				d3.select("#turningPoint).html(d.text);
+				d3.select("#turningPoint").html(d.text);
 			});	
 			
 		svg.append("g")
