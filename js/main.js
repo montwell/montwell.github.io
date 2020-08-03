@@ -241,14 +241,14 @@ function drawDeathsGraph(townId){
 }
 
 function onMouseOverTown(path, townId) {
-	path.transition(getEaseLinearTransition()).style('fill', "#00f");
+	path.transition(getEaseLinearTransition(400)).style('fill', "#00f");
 	
 	setTownInfo(townId);
 }
 
 function onMouseOutTown(path, townId) {	  
     if(previouslySelectedTownId != townId) {
-		path.transition(getEaseLinearTransition())
+		path.transition(getEaseLinearTransition(400))
 			.style('fill', d => mapColorScale(getLatestData(townId)["Total cases "]))
 	}
 	
@@ -272,7 +272,7 @@ function onClickTown(path, townId) {
 		previouslySelectedTown = path;
 		path.style('fill', '#00f');
 		
-		d3.select("#graphs").transition(getEaseLinearTransition()).style("visibility", "visible");
+		d3.select("#graphs").transition(getEaseLinearTransition(700)).style("visibility", "visible");
 		drawCasesGraph(townId);
 		drawDeathsGraph(townId);
 		
@@ -280,13 +280,13 @@ function onClickTown(path, townId) {
 		console.log("Town unclicked");
 		previouslySelectedTownId = null;
 		previouslySelectedTown = null;
-		d3.select("#graphs").transition(getEaseLinearTransition()).style("visibility", "hidden");
+		d3.select("#graphs").transition(getEaseLinearTransition(700)).style("visibility", "hidden");
 	}
 }
 
-function getEaseLinearTransition() {
+function getEaseLinearTransition(duration) {
 	return d3.transition()
-      .duration(400)
+      .duration(duration)
       .ease(d3.easeLinear);
 }
 
