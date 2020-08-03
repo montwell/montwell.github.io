@@ -41,12 +41,22 @@ div {
 	margin-left:20px;
 }
 
+#graphContainer {
+	position: relative;
+}
+
 #graphs {
+	position: absolute;
+	top:0;
+	left:0;
 	width: 100%;
 	opacity: 0;
 }
 
 #graphHelp {
+	position: absolute;
+	top:0;
+	left:0;
 	width: 100%;
 	opacity: 1;
 }
