@@ -179,7 +179,8 @@ function getYFromDate(townData, date) {
 	for(i = 0; i < townData.length; i++) {
 		if(townData[i].key) {
 			console.log("Found at " + i);
-			return 0;
+			console.log("Total cases " + townData[0].values[0]["Total cases "]);
+			return townData[0].values[0]["Total cases "];
 		}
 	}
 }
