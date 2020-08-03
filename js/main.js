@@ -275,13 +275,13 @@ function onClickTown(path, townId) {
 		d3.select("#graphs").transition().duration(800).style("visibility", "hidden");
 		drawCasesGraph(townId);
 		drawDeathsGraph(townId);
-		d3.select("#graphs").transition().duration(1200)).style("visibility", "visible");
+		d3.select("#graphs").transition().duration(1200).style("visibility", "visible");
 		
 	} else {
 		console.log("Town unclicked");
 		previouslySelectedTownId = null;
 		previouslySelectedTown = null;
-		d3.select("#graphs").transition().duration(800)).style("visibility", "hidden");
+		d3.select("#graphs").transition().duration(800).style("visibility", "hidden");
 	}
 }
 
