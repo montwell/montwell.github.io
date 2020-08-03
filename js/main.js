@@ -164,7 +164,7 @@ function drawCasesGraph(townId){
 			.attr('cy', d => y(getYFromDate(townData, d.date)))
 			.attr('stroke-width', '5px')
 			.attr('stroke', 'rgba(0,0,0,0)')
-			.attr('fill', 'rgba(0,0,0,0)')
+			.attr('fill', 'rgba(255,255,0,0)')
 			.style('cursor', 'pointer')
 			.on('click', d => {
 				console.log(d);
