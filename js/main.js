@@ -117,8 +117,8 @@ function drawCasesGraph(townId){
 				.y(d => y(parseInt(d.values[0]["Total cases "]))));
 				
 		svg.append("g")
-			.selectAll('dot')
 			.attr("transform", "translate(" + margin.left + "," + margin.top + ")")			
+			.selectAll('dot')
 			.data(townData)
 			.append('circle')
 			.attr('r', 5)
