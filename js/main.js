@@ -167,7 +167,7 @@ function drawCasesGraph(townId){
 			.attr('fill', 'rgba(0,0,0,0)')
 			.style('cursor', 'pointer')
 			.on('click', d => {
-				console.log(d);
+				console.log(d + "");
 			});			
 	}
 }
@@ -177,6 +177,7 @@ function getYFromDate(townData, date) {
 	for(int i = 0; i < townData.length; i++) {
 		if(townData[i].key) {
 			console.log("Found at " + i);
+			return 0;
 		}
 	}
 }
