@@ -129,6 +129,7 @@ function drawCasesGraph(townId){
 			.style('cursor', 'pointer')
 			.on('click', d => {
 				console.log(d.text);
+				d3.select("#turningPoint).html(d.text);
 			});	
 			
 		svg.append("g")
@@ -174,11 +175,8 @@ function drawCasesGraph(townId){
 }
 
 function getCasesFromDate(townData, date) {
-	console.log("looking for " + date);
 	for(i = 0; i < townData.length; i++) {
 		if(townData[i].key == date) {
-			console.log("Found at " + i);
-			console.log("Total cases " + townData[i].values[0]["Total cases "]);
 			return parseInt(townData[i].values[0]["Total cases "]);
 		}
 	}

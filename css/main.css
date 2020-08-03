@@ -65,6 +65,13 @@ div {
 	font-size: 1.2em;
 }
 
+#turningPoint {
+	position: absolute;
+	bottom:0px;
+	left:200px;
+	font-size: 1.2em;	
+}
+
 .graph {
 	position: relative;
 	display: inline-block;
@@ -86,16 +93,6 @@ div {
 
 .center-horizontally {
 	margin: 0 auto 0 auto;
-}
-
-.turning-point {
-	width: 220px;
-	height: 180px;
-    display: inline-block;
-	font-size:1.2em;
-	border-radius: 5px;
-	background: #FFF;
-	padding:10px;
 }
 
 .headerText {
