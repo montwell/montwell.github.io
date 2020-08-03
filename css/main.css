@@ -68,7 +68,7 @@ div {
 #turningPoint {
 	position: absolute;
 	bottom:100px;
-	left:100px;
+	left:0px;
 	font-size: 1.2em;	
 }
 
