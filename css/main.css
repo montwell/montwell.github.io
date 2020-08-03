@@ -58,10 +58,11 @@ div {
 #graphHelp {
 	position: absolute;
 	top:0px;
-	left:400px;
+	left:350px;
 	margin: 0 auto 0 auto;
 	width: 200px;	
 	opacity: 1;
+	font-size: 1.2em;
 }
 
 .graph {
