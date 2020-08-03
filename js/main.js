@@ -272,7 +272,7 @@ function onClickTown(path, townId) {
 		previouslySelectedTown = path;
 		path.style('fill', '#00f');
 		
-		d3.select("#graphs").style("visibility", "visible");
+		d3.select("#graphs").transition(getEaseLinearTransition()).style("visibility", "visible");
 		drawCasesGraph(townId);
 		drawDeathsGraph(townId);
 		
@@ -280,7 +280,7 @@ function onClickTown(path, townId) {
 		console.log("Town unclicked");
 		previouslySelectedTownId = null;
 		previouslySelectedTown = null;
-		d3.select("#graphs").style("visibility", "hidden");
+		d3.select("#graphs").transition(getEaseLinearTransition()).style("visibility", "hidden");
 	}
 }
 
