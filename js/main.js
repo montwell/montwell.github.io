@@ -272,7 +272,7 @@ function onClickTown(path, townId) {
 		previouslySelectedTown = path;
 		path.style('fill', '#00f');
 		
-		d3.select("#graphs").transition().duration(800).style('opacity', 0);
+		await d3.select("#graphs").transition().duration(800).style('opacity', 0);
 		drawCasesGraph(townId);
 		drawDeathsGraph(townId);
 		d3.select("#graphs").transition().duration(1200).style('opacity', 1);
