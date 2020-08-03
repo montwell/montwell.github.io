@@ -166,7 +166,7 @@ function drawCasesGraph(townId){
 			.attr('stroke', 'rgba(0,0,0,0)')
 			.attr('fill', 'rgba(0,0,0,0)')
 			.style('cursor', 'pointer')
-			.on('click' d => {
+			.on('click', d => {
 				console.log(d);
 			});			
 	}
