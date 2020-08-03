@@ -118,8 +118,9 @@ function drawCasesGraph(townId){
 				
 		svg.append("g")
 			.attr("transform", "translate(" + margin.left + "," + margin.top + ")")			
-			.selectAll('dot')
+			.selectAll('circle')
 			.data(townData)
+			.enter()
 			.append('circle')
 			.attr('r', 5)
 			.attr('cx', d => x(new Date(d.key)))
