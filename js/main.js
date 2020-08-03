@@ -4,6 +4,13 @@ var mapColorScale;
 var previouslySelectedTownId = null;
 var previouslySelectedTown = null;
 
+var turningPoints = JSON.parse('['
+	+ '{"date":"","text":""},' +
+	+ '{"date":"","text":""},' +
+	+ '{"date":"","text":""},' +
+	+ '{"date":"","text":""},' +
+	+ ']');
+
 async function init() {
 	console.log("version 0.03.200731");
 	
@@ -63,8 +70,8 @@ function drawCasesGraph(townId){
 	var svgHeight = 300;
 	
 	var margin = {top: 60, right: 30, bottom: 30, left: 60},
-		gWidth = 425 - margin.left - margin.right,
-		gHeight = 300 - margin.top - margin.bottom;
+		gWidth = svgWidth - margin.left - margin.right,
+		gHeight = svgHeight - margin.top - margin.bottom;
 	
 	if(townId != null) {		
 		var townData = covidDataByTown[townId - 1].values
@@ -123,10 +130,10 @@ function drawCasesGraph(townId){
 			.data(townData)
 			.enter()
 			.append('circle')
-			.attr('r', 5)
+			.attr('r', 3)
 			.attr('cx', d => x(new Date(d.key)))
 			.attr('cy', d => y(parseInt(d.values[0]["Total cases "])))
-			.attr('stroke-width', '20px')
+			.attr('stroke-width', '5px')
 			.attr('stroke', 'rgba(0,0,0,0)')
 			.attr('fill', 'rgba(0,0,0,0)')
 			.on('mouseover', d => {
@@ -154,8 +161,8 @@ function drawDeathsGraph(townId){
 	var svgHeight = 300;
 	
 	var margin = {top: 60, right: 30, bottom: 30, left: 60},
-		gWidth = 425 - margin.left - margin.right,
-		gHeight = 300 - margin.top - margin.bottom;
+		gWidth = svgWidth - margin.left - margin.right,
+		gHeight = svgHeight - margin.top - margin.bottom;
 	
 	if(townId != null) {
 		var townData = covidDataByTown[townId - 1].values
