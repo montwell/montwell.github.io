@@ -108,7 +108,7 @@ function drawCasesGraph(townId){
 		
 		svg.append("g")
 			.attr("transform", "translate(" + margin.left + "," + (gHeight + margin.top) + ")")
-			.call(d3.axisBottom(x).ticks(6).tickFormat(d3.timeFormat("%B %y")));
+			.call(d3.axisBottom(x).ticks(6).tickFormat(d3.timeFormat("%B %Y")));
 			
 		svg.append("g")
 			.attr("transform", "translate(" + margin.left + "," + margin.top + ")")
