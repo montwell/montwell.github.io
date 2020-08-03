@@ -96,10 +96,10 @@ div {
   color: white;
   position: absolute;
   text-align: center;
-  width: 60px;
-  height: 28px;
+  width: 80px;
+  height: 30px;
   padding: 5px;
-  font: 1.2em sans-serif;
+  font: 1em sans-serif;
   background: rgba(0,0,0,.8);
   border-radius: 5px;
   pointer-events: none;
