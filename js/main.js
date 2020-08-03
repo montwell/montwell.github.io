@@ -137,7 +137,7 @@ function drawCasesGraph(townId){
 			  tooltip
 				.html(d.key + '<br/>' + d.values[0]["Total cases "])
 				.style('left', d3.event.pageX + 10 + 'px')
-				.style('top', d3.event.pageY + 28 + 'px');
+				.style('top', d3.event.pageY + 20 + 'px');
 			})
 			.on('mouseout', () => {
 			  tooltip
@@ -181,7 +181,13 @@ function drawDeathsGraph(townId){
 			
 		var y = d3.scaleLinear()
 			.domain([0, d3.max(townData, d => parseInt(d.values[0]["Total deaths"]))])
-			.range([gHeight, 0]);			
+			.range([gHeight, 0]);
+
+		var tooltip = d3
+			.select('body')
+			.append('div')
+			.attr('class', 'tooltip')
+			.style('opacity', 0);			
 		
 		svg.append("g")
 			.attr("transform", "translate(" + margin.left + "," + (gHeight + margin.top) + ")")
@@ -202,6 +208,35 @@ function drawDeathsGraph(townId){
 				.x(d => x(new Date(d.key)))
 				.y(d => y(parseInt(d.values[0]["Total deaths"]))));
 				
+		svg.append("g")
+			.attr("transform", "translate(" + margin.left + "," + margin.top + ")")			
+			.selectAll('circle')
+			.data(townData)
+			.enter()
+			.append('circle')
+			.attr('r', 5)
+			.attr('cx', d => x(new Date(d.key)))
+			.attr('cy', d => y(parseInt(d.values[0]["Total deaths"])))
+			.attr('stroke-width', '20px')
+			.attr('stroke', 'rgba(0,0,0,0)')
+			.attr('fill', 'rgba(0,0,0,0)')
+			.style('cursor', 'pointer')
+			.on('mouseover', d => {
+			  tooltip
+				.transition()
+				.duration(200)
+				.style('opacity', 0.9);
+			  tooltip
+				.html(d.key + '<br/>' + d.values[0]["Total deaths"])
+				.style('left', d3.event.pageX + 10 + 'px')
+				.style('top', d3.event.pageY + 20 + 'px');
+			})
+			.on('mouseout', () => {
+			  tooltip
+				.transition()
+				.duration(500)
+				.style('opacity', 0);
+			});
 	}
 }
 
