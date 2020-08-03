@@ -126,7 +126,7 @@ function drawCasesGraph(townId){
 			.attr('cx', d => x(new Date(d.key)))
 			.attr('cy', d => y(parseInt(d.values[0]["Total cases "])))
 			.attr('stroke-width', '20px')
-			.attr('stroke', 'rgba(0,0,0,.8)')
+			.attr('stroke', 'rgba(0,0,0,0)')
 			.style('cursor', 'pointer')
 			.on('mouseover', d => {
 			  tooltip
