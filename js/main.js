@@ -176,7 +176,7 @@ function drawCasesGraph(townId){
 function getCasesFromDate(townData, date) {
 	console.log("looking for " + date);
 	for(i = 0; i < townData.length; i++) {
-		if(townData[i].key) {
+		if(townData[i].key == date) {
 			console.log("Found at " + i);
 			console.log("Total cases " + townData[0].values[0]["Total cases "]);
 			return parseInt(townData[0].values[0]["Total cases "]);
