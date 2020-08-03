@@ -232,6 +232,24 @@ function drawDeathsGraph(townId){
 			
 		svg.append("g")
 			.attr("transform", "translate(" + margin.left + "," + margin.top + ")")			
+			.selectAll('circle')
+			.data(turningPoints)
+			.enter()
+			.append('circle')
+			.attr('r', 10)
+			.attr('cx', d => x(new Date(d.date)))
+			.attr('cy', d => y(getDeathsFromDate(townData, d.date)))
+			.attr('stroke-width', '5px')
+			.attr('stroke', 'rgba(0,0,0,0)')
+			.attr('fill', 'rgba(255,255,0,.8)')
+			.style('cursor', 'pointer')
+			.on('click', d => {
+				console.log(d.text);
+				d3.select("#turningPoint").html(d.date + "</br>" + d.text);
+			})
+			
+		svg.append("g")
+			.attr("transform", "translate(" + margin.left + "," + margin.top + ")")			
 			.append("path")
 			.datum(townData)
 			.attr("fill", "none")
@@ -269,6 +287,14 @@ function drawDeathsGraph(townId){
 				.duration(500)
 				.style('opacity', 0);
 			});
+	}
+}
+
+function getCasesFromDate(townData, date) {
+	for(i = 0; i < townData.length; i++) {
+		if(townData[i].key == date) {
+			return parseInt(townData[i].values[0]["Total deaths"]);
+		}
 	}
 }
 
