@@ -70,8 +70,9 @@ div {
 	bottom:80px;
 	left:0px;
 	width:100%;
-	font-size: 1.2em;	
+	font-size: 1.0em;	
 	text-align: center;
+	line-height: 1.6;
 }
 
 .graph {
