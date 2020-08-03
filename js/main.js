@@ -129,7 +129,6 @@ function drawCasesGraph(townId){
 			.attr('stroke-width', '20px')
 			.attr('stroke', 'rgba(0,0,0,0)')
 			.attr('fill', 'rgba(0,0,0,0)')
-			.style('cursor', 'pointer')
 			.on('mouseover', d => {
 			  tooltip
 				.transition()
@@ -221,7 +220,6 @@ function drawDeathsGraph(townId){
 			.attr('stroke-width', '20px')
 			.attr('stroke', 'rgba(0,0,0,0)')
 			.attr('fill', 'rgba(0,0,0,0)')
-			.style('cursor', 'pointer')
 			.on('mouseover', d => {
 			  tooltip
 				.transition()
