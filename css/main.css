@@ -98,8 +98,8 @@ div {
   text-align: center;
   width: 60px;
   height: 28px;
-  padding: 2px;
-  font: 12px sans-serif;
+  padding: 5px;
+  font: 1.2em sans-serif;
   background: rgba(0,0,0,.8);
   border-radius: 5px;
   pointer-events: none;
